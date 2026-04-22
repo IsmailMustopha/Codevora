@@ -4,13 +4,20 @@
     "esModuleInterop": true,
     "target": "es6",
     "noImplicitAny": true,
-    "moduleResolution": "node",
+    /* Fix for TS5107: Using 'node10' (the new name for 'node') with a bypass 
+       or you can switch to 'node16' if your environment supports it. */
+    "moduleResolution": "node10",
+    "ignoreDeprecations": "6.0",
+
+    /* Fix for TS5011: Explicitly defining the root of your source code */
+    "rootDir": "./src",
+
     "sourceMap": true,
     "outDir": "./dist",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*", "src/models/.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
